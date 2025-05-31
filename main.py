@@ -1,6 +1,7 @@
 from utils.repo_handler import get_repo_source
 from utils.language_detector import detect_languages
 from utils.dependency_parser import parse_dependencies
+from utils.runtime_recommender import recommend_runtime
 
 if __name__ == "__main__":
     repo_path = get_repo_source()
@@ -24,3 +25,12 @@ if __name__ == "__main__":
                     print(f"    - {pkg}")
         else:
             print("  - No recognized dependency files found.")
+
+# Step 4: Recommend Runtime Environments
+runtimes = recommend_runtime(repo_path)
+print("\n⚙️ Recommended Runtime Environments:")
+if runtimes:
+    for r in runtimes:
+        print(f"  - {r}")
+else:
+    print("  - No specific runtime recommendation found.")
