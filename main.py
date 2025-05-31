@@ -26,7 +26,7 @@ if __name__ == "__main__":
         else:
             print("  - No recognized dependency files found.")
 
-# Step 4: Recommend Runtime Environments
+
 runtimes = recommend_runtime(repo_path)
 print("\n⚙️ Recommended Runtime Environments:")
 if runtimes:
